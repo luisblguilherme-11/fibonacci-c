@@ -1,14 +1,19 @@
 #include <stdio.h>
-#include "function_fibonacci.c"
+#include <assert.h>
 
-int main() {
-    printf("Testando Fibonacci:\n");
+int fibonacci(int n);
 
-    printf("F(0) = %lld\n", fibonacci(0));   // Esperado: 0
-    printf("F(1) = %lld\n", fibonacci(1));   // Esperado: 1
-    printf("F(6) = %lld\n", fibonacci(6));   // Esperado: 8
-    printf("F(9) = %lld\n", fibonacci(9));   // Esperado: 34
+int main()
+{
 
-    printf("Criado por Luís Guiherme");
+    assert(fibonacci(0) == 0);
+    assert(fibonacci(1) == 1);
+    assert(fibonacci(6) == 8);
+    assert(fibonacci(9) == 34);
+
+    printf("Todos os testes passaram!\n");
+
+    printf("\nFeito por Luís Guilherme ( https://github.com/luisblguilherme-11 ) ");
+
     return 0;
 }
