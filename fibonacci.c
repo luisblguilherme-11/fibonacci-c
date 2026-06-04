@@ -1,19 +1,18 @@
 #include <stdio.h>
-#include "function_fibonacci.c"
 
-int main() {
+int fibonacci(int n);
+
+int main()
+{
+
     int n;
 
-    printf("Digite a posicao na sequencia de Fibonacci (>= 0): ");
+    printf("Digite a posicao: ");
     scanf("%d", &n);
 
-    if (n < 0) {
-        printf("Erro: o numero deve ser maior ou igual a zero.\n");
-    } else {
-        long long resultado = fibonacci(n);
-        printf("F(%d) = %lld\n", n, resultado);
-    }
+    printf("F(%d) = %d\n", n, fibonacci(n));
 
-    printf("Criado por Luís Guilherme");
+    printf("\nFeito por Luís Guilherme ( https://github.com/luisblguilherme-11 ) ");
+
     return 0;
 }
