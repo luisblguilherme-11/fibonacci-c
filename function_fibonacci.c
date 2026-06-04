@@ -1,19 +1,21 @@
-#ifndef FUNCTION_FIBONACCI_C
-#define FUNCTION_FIBONACCI_C
+int fibonacci(int n)
+{
 
-// Retorna o n-esimo numero da sequencia de Fibonacci
-// F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2)
-long long fibonacci(int n) {
-    if (n == 0) return 0;
-    if (n == 1) return 1;
+    if(n == 0)
+        return 0;
 
-    long long anterior = 0, atual = 1;
-    for (int i = 2; i <= n; i++) {
-        long long proximo = anterior + atual;
-        anterior = atual;
-        atual = proximo;
+    if(n == 1)
+        return 1;
+
+    int a = 0;
+    int b = 1;
+    int c;
+
+    for(int i = 2; i <= n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
     }
-    return atual;
-}
 
-#endif
+    return b;
+}
